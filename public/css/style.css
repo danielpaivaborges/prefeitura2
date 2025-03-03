@@ -203,13 +203,13 @@
 
 .dropdown .dropdown-menu a:hover {
     background: var(--bs-secondary);
-    color: var(--bs-primary);
+    color: rgb(59,239,31);
 }
 
 .navbar .nav-item:hover .dropdown-menu {
     transform: rotateX(0deg);
     visibility: visible;
-    background: var(--bs-light) !important;
+    background: rgb(6, 6, 6) !important;
     border-radius: 10px !important;
     transition: .5s;
     opacity: 1;
@@ -436,5 +436,13 @@
 }
 
 .transparente {
-    background-color: rgba(13, 151, 6, 0.632);
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.card {
+    box-shadow: 6px 7px 6px 1px rgba(0, 0, 0, .2);
+}
+
+.dropdown-item {
+    color: white !important
 }

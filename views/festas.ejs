@@ -1,0 +1,117 @@
+<%-include('./partials/header.ejs')%>
+
+    <body>
+
+        <!-- Spinner Start -->
+        <div id="spinner"
+            class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" role="status"></div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar start -->
+        <div class="container-fluid transparente px-0">
+            <div class="container-fluid" id="barra-menu">
+                <div class="container px-0">
+                    <nav class="navbar navbar-light navbar-expand-xl">
+                        <a href="/" class="navbar-brand mt-3">
+                            <p class="text-white display-6 mb-3" style="line-height: 0;">Serra da Saudade</p>
+                            <small class="text-white fw-normal">Prefeitura Municipal</small>
+                        </a>
+                        <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarCollapse">
+                            <span class="fa fa-bars text-white"></span>
+                        </button>
+                        <div class="collapse navbar-collapse  py-3" id="navbarCollapse">
+                            <div class="navbar-nav mx-auto border-top">
+                                <a href="/" class="nav-item nav-link ">Home</a>
+                                <a href="/detail-page" class="nav-item nav-link ">Detail Page</a>
+                                <a href="/404" class="nav-item nav-link">404 Page</a>
+                                <div class="nav-item dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">A
+                                        cidade</a>
+                                    <div class="dropdown-menu m-0 bg-secondary rounded-0">
+                                        <a href="/historia" class="dropdown-item ">História da Cidade</a>
+                                        <a href="docs/bensProtegidos.pdf" class="dropdown-item">Bens Protegidos</a>
+                                        <a href="/captacao" class="dropdown-item">Captação de Recursos</a>
+                                        <a href="/festas" class="dropdown-item">Festas</a>                                     
+                                    </div>
+                                </div>
+                                <a href="/contact" class="nav-item nav-link">Contact Us</a>
+                            </div>
+
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar End -->
+
+        <!-- Noticia Start -->
+        <div class="container-fluid py-2">
+            <div class="container py-2">
+                <div class="row g-4">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="text-center">FESTAS TRADICIONAIS</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="position-relative rounded overflow-hidden mb-3">
+                                    <img src="img/festas.png" class="img-zoomin img-fluid rounded w-100" alt="">
+                                </div>
+                                <div>
+                                    <div>
+                                        <p>Várias são as comemorações no calendário de Serra da Saudade. Entre elas, o
+                                            Serrano Ausente. &nbsp; Esse tipo de evento tem se tornado bastante comum
+                                            entre as cidades da região. Normalmente são realizadas homenagens
+                                            relembrando pessoas que viviam no lugar e se foram para tentar a vida em
+                                            outras cidades. Eles voltam para receber as homenagens e também dedicar um
+                                            pouco de si, de seu profissionalismo em prol de sua cidade.&nbsp;</p>
+                                        <p data-empty="true"><br></p>
+                                        <p><strong>Festa do Peão&nbsp;</strong></p>
+                                        <p data-empty="true">Considerada uma das mais tradicionais, a festa do peão
+                                            acontece todos os anos, em maio. O destaque fica para as montarias dos peões
+                                            e os desfiles pela cidade em cavalos, carros alegóricos, etc. Cada um a seu
+                                            modo, busca fazer com que a festa tenha sempre mais brilho!</p>
+                                        <p data-empty="true"><strong>Nossa Senhora do Rosário</strong></p>
+                                        <p data-empty="true">A festa de Nossa Senhora do Rosário é realizada em
+                                            setembro. E todos os anos, conta com a tradição e grande participação da
+                                            população, num gesto de religiosidade e fé.</p>
+                                        <p data-empty="true">Para embelezar as procissões são vinte e cinco ternos de
+                                            dançantes, aproximadamente. Dois deles são tradicionais de Serra da Saudade,
+                                            e os outros das cidades da região.</p>
+                                        <p data-empty="true">Os congadeiros conferem um toque especial ao evento que
+                                            representa o folclore da nossa terra.</p>
+                                        <p data-empty="true"><strong>Folia de Reis</strong></p>
+                                        <p data-empty="true">É comemorada dia 6 de janeiro de cada ano e é também uma
+                                            tradição de Minas, que Serra da Saudade tem cultivado ao longo dos anos.
+                                            Desde a década de 70 são dois ternos que mantém viva a memória dos seus
+                                            antepassados.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- noticia end -->
+
+            <!-- Back to Top -->
+            <a href="#" class="btn btn-success border-2 border-white rounded-circle back-to-top"><i
+                    class="fa fa-arrow-up"></i></a>
+
+
+            <!-- JavaScript Libraries -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="lib/easing/easing.min.js"></script>
+            <script src="lib/waypoints/waypoints.min.js"></script>
+            <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+            <!-- Template Javascript -->
+            <script src="js/main.js"></script>
+    </body>
+
+    </html>

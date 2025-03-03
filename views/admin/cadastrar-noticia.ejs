@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="/css/style.css" rel="stylesheet">
+    <title>Cadastro de Notícias</title>
+</head>
+
+<body>
+    <!-- barra de navegação -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Área Administrativa</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- fim da barra de navegação -->
+    <div class="container-fluid my-3">
+
+        <h3>CADASTRO DE NOTÍCIAS</h3>
+        <div class="card">
+            <div class="card-header">
+                Cadastre a notícia no formulário abaixo:
+            </div>
+            <div class="card-body">
+                <form action="/admin/saveNoticia" method="POST" enctype="multipart/form-data">
+                    <div class="form-floating mb-3">
+                        <input type="date" name="data" id="data" class="form-control my-2"
+                            placeholder="Digite a data da notícia" required>
+                        <label for="data">Digite a data da notícia</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" name="title" id="title" class="form-control my-2"
+                            placeholder="Digite o título da notícia" required>
+                        <label for="title">Digite o título da notícia</label>
+                    </div>
+                    <textarea name="body" id="body" class="form-control" required>
+                </textarea>
+                    <input class="form-control" type="file" name="file" id="file" required>
+                    <button type="submit" class="btn btn-warning btn-sm my-3">Salvar Notícia</button>
+                </form>
+            </div>
+            <div class="card-footer">
+
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <!-- importando e configurando o tinymce -->
+    <script src="/tinymce/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+            language: 'pt_BR',
+            selector: "#body",
+            license_key: 'gpl',
+            plugins: ['autolink', 'advlist', 'searchreplace', 'insertdatetime', 'autosave', 'emoticons', 'fullscreen', 'link', 'lists', 'media', 'preview', 'table', 'quickbars', 'image'],
+            toolbar: 'undo redo | styles | bold italic | emoticons | fullscreen | image | link | numlist bullist | media | preview | table tabledelete | tableprops tablerowprops tablecellprops | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol',
+            menubar: 'file edit insert view format table tools help',
+            mobile: {
+                menubar: true
+            }
+        })
+    </script>
+    <!-- FIM importando e configurando o tinymce -->
+</body>
+
+</html>
