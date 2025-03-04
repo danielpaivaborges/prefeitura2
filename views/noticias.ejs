@@ -1,0 +1,57 @@
+<%-include('./partials/header.ejs')%>
+    <link rel="stylesheet" href="/css/styletimeline.css">
+
+    <body>
+        <%-include('./partials/navbar.ejs')%>
+            <div class="container">
+                <!-- Noticias Start -->
+                <div class="container-fluid py-2">
+                    <div class="card">
+                        <div class="card-header">
+                            <h1>NOTÍCIAS SERRA DA SAUDADE</h1>
+                        </div>
+                        <div class="card-body noticiasColoridas">
+                            <ul>
+                                <% noticias.forEach((noticia)=>{%>
+
+                                    <li
+                                        style="--accent-color:rgb(4, 63, 21);">
+                                        <div class="date">
+                                            <%=noticia.date%>
+                                        </div>
+                                        <div class="imagemTimeline"> <img width="100" src="/uploads/<%=noticia.fotoId%>"
+                                                alt="foto"></div>
+                                        <div class="title text-center">
+                                            <a href="/noticia/<%=noticia.id%>"><%=noticia.title%></a>
+                                        </div>
+                                    </li>
+                                    <%})%>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- noticias end -->
+            </div>
+            <!-- Back to Top -->
+            <a href="#" class="btn btn-success border-2 border-white rounded-circle back-to-top"><i
+                    class="fa fa-arrow-up"></i></a>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+                crossorigin="anonymous"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+            <script src="/js/timeline.js"></script>
+            <script>
+                document.querySelectorAll(".nav-link").forEach((link) => {
+                    if (link.href === window.location.href) {
+                        link.classList.add("active");
+                        link.setAttribute("aria-current", "page");
+                    }
+                });
+            </script>
+           
+            
+
+    </body>
+
+    </html>

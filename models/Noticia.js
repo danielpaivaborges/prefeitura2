@@ -16,15 +16,19 @@ const Noticia = connectionNoticias.define("noticias", {
     allowNull: false
   },
   body: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     allowNull: false
   },
   fotoId: {
     type: Sequelize.STRING,
     allowNull: false
+  },
+  autor: {
+    type: Sequelize.STRING,
+    allowNull: true
   }
 });
 
-//  Noticia.sync({force: true})
+  //  Noticia.sync({force: true})
 
 module.exports = Noticia;

@@ -30,12 +30,12 @@ router.get("/festas", (req, res) => {
   res.render("festas");
 });
 
-router.get("/admin/cadastrar-noticia", (req, res) => {
-  res.render("admin/cadastrar-noticia");
-});
+// router.get("/admin/cadastrar-noticia", (req, res) => {
+//   res.render("admin/cadastrar-noticia");
+// });
 
-router.get("/admin/noticiasGerenciar", (req, res) => {
-  res.render("admin/noticiasGerenciar");
-});
+// router.get("/admin/noticiasGerenciar", (req, res) => {
+//   res.render("admin/noticiasGerenciar");
+// });
 
 module.exports = router;

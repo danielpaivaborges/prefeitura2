@@ -7,28 +7,30 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="/css/style.css" rel="stylesheet">
-    <title>Cadastro de Notícias</title>
+    <title>Editar Notícia</title>
 </head>
 
 <body>
     <%-include('../partials/headerAdmin.ejs')%>
     <div class="container-fluid my-3">
 
-        <h3>CADASTRO DE NOTÍCIAS</h3>
+        <h3>Editar Notícia</h3>
         <div class="card">
             <div class="card-header">
-                Cadastre a notícia no formulário abaixo:
+                Edite a notícia no formulário abaixo:
             </div>
             <div class="card-body">
-                <form action="/admin/saveNoticia" method="POST" enctype="multipart/form-data">
+                <form action="/admin/updateNoticia" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="id" value="<%=noticia.id%>">
+                    <div id="content" hidden><%- noticia.body%></div>
                     <div class="form-floating mb-3">
                         <input type="date" name="data" id="data" class="form-control my-2"
-                            placeholder="Digite a data da notícia" required>
+                            placeholder="Digite a data da notícia" value="<%=data%>" required>
                         <label for="data">Digite a data da notícia</label>
                     </div>
                     <div class="form-floating mb-3">
                         <input type="text" name="title" id="title" class="form-control my-2"
-                            placeholder="Digite o título da notícia" required>
+                            placeholder="Digite o título da notícia" value="<%=noticia.title%>" required>
                         <label for="title">Digite o título da notícia</label>
                     </div>
                     <textarea name="body" id="body" class="form-control" required>
@@ -45,6 +47,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <!-- importando e configurando o tinymce -->
     <script src="/tinymce/tinymce.min.js"></script>
     <script>
@@ -53,10 +57,13 @@
             selector: "#body",
             license_key: 'gpl',
             plugins: ['autolink', 'advlist', 'searchreplace', 'insertdatetime', 'autosave', 'fullscreen', 'link', 'lists', 'media', 'preview', 'table'],
-            toolbar: 'undo redo | styles | bold italic |  fullscreen | image | link | numlist bullist | media | preview | table tabledelete | tableprops tablerowprops tablecellprops | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol',
+            toolbar: 'undo redo | styles | bold italic | fullscreen | link | numlist bullist | media | preview | table tabledelete | tableprops tablerowprops tablecellprops | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol',
             menubar: 'file edit insert view format table tools help',
             mobile: {
                 menubar: true
+            },
+            init_instance_callback: () => {
+                tinymce.get("body").setContent($(content).html());
             }
         })
     </script>
