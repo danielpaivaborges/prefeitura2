@@ -8,25 +8,26 @@
                 <div class="container-fluid py-2">
                     <div class="card">
                         <div class="card-header">
-                            <h1>NOTÍCIAS SERRA DA SAUDADE</h1>
+                            <h1 class="p-2 text-center">NOTÍCIAS</h1>
                         </div>
-                        <div class="card-body noticiasColoridas">
-                            <ul>
-                                <% noticias.forEach((noticia)=>{%>
-
-                                    <li
-                                        style="--accent-color:rgb(4, 63, 21);">
-                                        <div class="date">
-                                            <%=noticia.date%>
-                                        </div>
-                                        <div class="imagemTimeline"> <img width="100" src="/uploads/<%=noticia.fotoId%>"
-                                                alt="foto"></div>
-                                        <div class="title text-center">
-                                            <a href="/noticia/<%=noticia.id%>"><%=noticia.title%></a>
-                                        </div>
-                                    </li>
-                                    <%})%>
-                            </ul>
+                        <div class="card-body ">
+                            <section class="block-content t-block-teal l-block-spacing">
+                                <div class="l-contained">
+                                    <ul class="timeline-list">
+                                       <%noticias.forEach((noticia)=>{%>
+                                        <li>
+                                            <div class="content">
+                                                <h3><%=noticia.date%></h3>
+                                                <p class="text-center">
+                                                    <a href="/noticia/<%=noticia.id%>"><%=noticia.title.toUpperCase()%></a>
+                                                </p>
+                                                <img src="/uploads/<%=noticia.fotoId%>" alt="<%=noticia.fotoId%>">
+                                            </div>
+                                        </li>
+                                        <%})%>
+                                    </ul>
+                                </div>
+                            </section>
                         </div>
                     </div>
                 </div>
@@ -49,8 +50,8 @@
                     }
                 });
             </script>
-           
-            
+
+
 
     </body>
 

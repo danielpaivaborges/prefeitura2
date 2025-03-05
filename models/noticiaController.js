@@ -114,7 +114,7 @@ router.get("/noticia/:id", (req, res) => {
 });
 
 router.get("/noticias", (req, res) => {
-  Noticias.findAll({ order: [["id", "DESC"]] })
+  Noticias.findAll({ order: [["date", "ASC"]] })
     .then((noticias) => {
       res.render("noticias", { noticias: noticias });
     })
